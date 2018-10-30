@@ -10,8 +10,7 @@ namespace Bonus_3
     {
         Random r = new Random();
         private int num;
-        private int guessCount = 0;
-        public int GuessCount { get { return guessCount; } }
+        
         public GuessingGameApp()
         {
             num = r.Next(1, 101);
@@ -25,13 +24,11 @@ namespace Bonus_3
 
         public bool GuessAnswer(int input)
         {
-            guessCount++;
+            
             int diff = 0;
             if (input == num)
             {
                 Console.WriteLine("Match! You win!");
-               
-                PrintGuesses();
                 return true;
             }
             else if (input > num)
@@ -62,22 +59,7 @@ namespace Bonus_3
             return false;
         }
 
-        public void PrintGuesses()
-        {
-            Console.WriteLine("You guessed " + guessCount + " times");
-            if (guessCount < 5)
-            {
-                Console.WriteLine("Wow you're a genius");
-            }
-            else if (guessCount < 10)
-            {
-                Console.WriteLine("Pretty solid!");
-            }
-            else if (guessCount < 20)
-            {
-                Console.WriteLine("Better luck next time, ya dangus");
-            }
-        }
+      
 
 
     }

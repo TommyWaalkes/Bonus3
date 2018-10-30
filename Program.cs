@@ -13,15 +13,17 @@ namespace Bonus_3
            
             bool foundNum = false;
             
-            GuessingGameApp ga = new GuessingGameApp(10);
-            int i = 1;
+            GuessingGameApp ga = new GuessingGameApp();
+            Guesser brute = new BruteForce();
+
+            Console.WriteLine();
             while (foundNum == false)
             {
-                foundNum = ga.GuessAnswer(i);
-                i++;
+                int guess = brute.Guess();
+                foundNum = ga.GuessAnswer(guess);
             }
 
-            
+            brute.PrintGuesses();
 
         }
     }
